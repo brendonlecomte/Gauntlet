@@ -57,7 +57,7 @@ SRC_FILES1=\
 INC_DIRS=-Isrc -I$(UNITY_ROOT)/src -I$(UNITY_ROOT)/extras/fixture/src
 SYMBOLS=
 
-all: clean prep default
+all: clean prep default run_test
 
 prep: 
 	mkdir -p bin
@@ -65,10 +65,13 @@ prep:
 default:
 	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES1) -o bin/$(TARGET1)
 
+advanced:
+	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) -DADV_TEST $(SRC_FILES1) -o bin/$(TARGET1)
+
 run_test:
 	./bin/$(TARGET1) -v
-
-test: clean prep default run_test
+	
+test: clean prep advanced run_test
 
 clean:
 	$(CLEANUP) $(TARGET1)

@@ -22,7 +22,6 @@ TEST(BinarySearch, BasicSearch)
 	{
 		TEST_ASSERT_EQUAL(i, binary_search( &a, 10, i));
 	}
-
 }
 
 TEST(BinarySearch, NullPtr)

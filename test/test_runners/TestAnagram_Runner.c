@@ -4,9 +4,11 @@
 TEST_GROUP_RUNNER(Anagram)
 {
 	RUN_TEST_CASE(Anagram, BasicMatch);
-	RUN_TEST_CASE(Anagram, ComplexMatch);
 	RUN_TEST_CASE(Anagram, BasicFail);
+#ifdef ADV_TEST
+	RUN_TEST_CASE(Anagram, ComplexMatch);
 	RUN_TEST_CASE(Anagram, TotalMatchFail);
 	RUN_TEST_CASE(Anagram, ZeroLengthFail);
 	RUN_TEST_CASE(Anagram, MismatchLengthFail);
+#endif
 }
