@@ -13,5 +13,5 @@
  **/
 bool anagram(const char* a, const char* b)
 {
-	return true;
+	return false;
 }
